@@ -94,7 +94,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleCheck
 
     NeoBundle 'mattn/emmet-vim'
-    NeoBundle 'yuratomo/w3m.vim'
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/vimproc'
     NeoBundle 'mattn/webapi-vim'
@@ -104,7 +103,9 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'h1mesuke/unite-outline'
     NeoBundle 'basyura/bitly.vim'
     NeoBundle 'bling/vim-airline'
-    NeoBundle 'rbtnn/puyo.vim'
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline_theme             = 'badwolf'
+    NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
