@@ -130,6 +130,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme             = 'badwolf'
     NeoBundle 'tpope/vim-fugitive' " vim Git plugin
+    NeoBundle 'gregsexton/gitv'
     NeoBundle 'tpope/vim-commentary'
 
 call neobundle#end()
