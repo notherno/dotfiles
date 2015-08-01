@@ -19,7 +19,7 @@ set noswapfile
 set ls=2
 set vb t_vb=
 
-" set showmatch
+set showmatch
 
 "-----------------------
 " 検索系
@@ -27,7 +27,7 @@ set vb t_vb=
 set ignorecase            "小文字の検索でも大文字も見つかるようにする
 set smartcase             "ただし大文字も含めた検索の場合はその通りに検索する
 set incsearch             "インクリメンタルサーチを行う
-set nowrapscan            "(no)検索をファイルの末尾まで検索したら、ファイルの先頭へループする
+set wrapscan            "(no)検索をファイルの末尾まで検索したら、ファイルの先頭へループする
 set history=1000          "コマンド、検索パターンを100個まで履歴に残す
 set hlsearch
 
@@ -44,7 +44,7 @@ noremap <C-y><C-y> :<C-u>tabe $MYVIMRC<CR>
 noremap <C-m><C-u> :<C-u>source $MYVIMRC<CR> 
 set pastetoggle=<C-y><C-p>
 " ノーマルモードで、セミコロンでもインサートモードに入れるようにする
-nnoremap ; :
+" nnoremap ; :
 
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -60,6 +60,21 @@ set pastetoggle=<C-p>
 if &encoding == 'utf-8'
   set ambiwidth=double
 endif
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+"=======================
+" Vim 修行モード
+" (矢印を使えなくする)
+"=======================
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 "-----------------------
 " ハイライト
@@ -102,18 +117,19 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleCheck
 
     NeoBundle 'w0ng/vim-hybrid' " colorcheme: hybrid
-    NeoBundle 'mattn/emmet-vim'
+    NeoBundle 'mattn/emmet-vim' " HTML/CSS入力補助
+    NeoBundle 'hail2u/vim-css3-syntax' " CSS3 syntax highlight
+
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/vimproc'
-    NeoBundle 'mattn/webapi-vim'
     NeoBundle 'tyru/open-browser.vim'
-    NeoBundle 'basyura/TweetVim'
     NeoBundle 'basyura/twibill.vim'
     NeoBundle 'h1mesuke/unite-outline'
-    NeoBundle 'bling/vim-airline'
+    NeoBundle 'bling/vim-airline' " 下方にステータスバーを表示
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme             = 'badwolf'
-    NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'tpope/vim-fugitive' " vim Git plugin
+    NeoBundle 'tpope/vim-commentary'
 
 call neobundle#end()
 
