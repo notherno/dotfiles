@@ -1,11 +1,10 @@
 "-----------------------
 " 基本設定
 "-----------------------
-set nocompatible               " Vimとして使う
+set nocompatible
 syntax enable
-syntax on                      " 色をつける
-set number                     " 行番号表示
-colorscheme torte
+syntax on
+set number
 set ai sm
 
 set ts=4 sw=4 sts=0
@@ -21,6 +20,7 @@ set ls=2
 set vb t_vb=
 
 " set showmatch
+
 "-----------------------
 " 検索系
 "-----------------------
@@ -45,6 +45,14 @@ noremap <C-m><C-u> :<C-u>source $MYVIMRC<CR>
 set pastetoggle=<C-y><C-p>
 " ノーマルモードで、セミコロンでもインサートモードに入れるようにする
 nnoremap ; :
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-e> <End>
 
 "pastemode
 set pastetoggle=<C-p>
@@ -72,9 +80,9 @@ endif
 set guioptions+=a
 " set ttymouse=xterm2
 
-" ----------------------
-" Neobundleの設定
-" ----------------------
+" --------------------------
+" Neobundle settings
+" --------------------------
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -93,6 +101,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     filetype plugin on
     NeoBundleCheck
 
+    NeoBundle 'w0ng/vim-hybrid' " colorcheme: hybrid
     NeoBundle 'mattn/emmet-vim'
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/vimproc'
@@ -101,12 +110,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'basyura/TweetVim'
     NeoBundle 'basyura/twibill.vim'
     NeoBundle 'h1mesuke/unite-outline'
-    NeoBundle 'basyura/bitly.vim'
     NeoBundle 'bling/vim-airline'
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme             = 'badwolf'
     NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
+
+"--------------------
+" Set colorscheme
+"--------------------
+colorscheme hybrid
 
 
