@@ -20,9 +20,13 @@ if [ -e "/Applications/xampp" ]; then
     export PATH=$PATH:/Applications/XAMPP/bin
 fi
 
-alias matlab='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay -nojvm'
-alias octave='/usr/local/octave/3.8.0/bin/octave-3.8.0'
+if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
+    alias matlab='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
+fi
 
+if [ -e "/usr/local/octave" ] ; then
+    alias octave='/usr/local/octave/3.8.0/bin/octave-3.8.0'
+fi
 
 # PATH
 export PATH=$PATH:$HOME/lbin:/usr/local/sbin
