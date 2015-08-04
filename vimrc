@@ -5,12 +5,13 @@ set nocompatible
 syntax enable
 syntax on
 set number
-set ai sm
+set enc=utf-8
 
 set ts=4 sw=4 sts=0
 set background=dark " 背景色
 set title
-set backspace=indent,eol,start " MacVimでバックスペースが上手くいかない問題を解消
+
+set backspace=indent,eol,start
 set expandtab " Tabをスペースに
 set autoindent cindent " 自動インデント
 set clipboard=unnamed
@@ -20,6 +21,7 @@ set ls=2
 set vb t_vb=
 
 set showmatch
+set wildmenu
 
 "-----------------------
 " 検索系
@@ -36,32 +38,55 @@ set hlsearch
 " キーバインド
 " ----------------------
 
-" インサートモードでEnterによって改行
-noremap <CR> o<ESC>
-noremap <S-CR> <S-o><ESC>
+" spaceキーをleaderキーとして設定
+let mapleader = "\<Space>"
 
-" Space2回 + コンマで設定
-noremap <C-y><C-y> :<C-u>tabe $MYVIMRC<CR> 
-noremap <C-m><C-u> :<C-u>source $MYVIMRC<CR> 
-set pastetoggle=<C-y><C-p>
-" ノーマルモードで、セミコロンでもインサートモードに入れるようにする
-" nnoremap ; :
+" ノーマルモードでEnterによって改行
+" noremap <CR> o<ESC>
 
+" C-cで挿入モードから抜ける
+inoremap <C-c> <Esc>
+
+" 設定変更を簡単に
+noremap <silent> <Leader>, :tabe $MYVIMRC<CR> 
+noremap <silent> <Leader>. :source $MYVIMRC<CR>
+
+" 検索ハイライトを消す
+nnoremap <silent> <C-l> :noh<CR><C-l>
+
+" 終了，保存
+noremap <Leader>q :bdelete<CR>
+noremap <Leader>Q :bdelete!<CR>
+noremap <Leader>w :write<CR>
+noremap <Leader>W :write!<CR>
+
+" タブ移動
+noremap <Leader><Left> gT
+noremap <Leader><Right> gt
+
+" 画面上部，下部にカーソル移動
+noremap <Leader>h H
+noremap <Leader>l L
+
+" 行頭，行末移動
+noremap H ^
+noremap L $
+
+" アドホック移動
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-e> <End>
 
-"pastemode
+" ペーストモード切替え
 set pastetoggle=<C-p>
 
+" 記号などの幅を固定する
 if &encoding == 'utf-8'
   set ambiwidth=double
 endif
 
+" Exコマンドモードで %% と入力すると現在のファイルのパスを展開
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 "=======================
@@ -94,7 +119,7 @@ if has('mouse')
 	set mouse=a
 endif
 set guioptions+=a
-" set ttymouse=xterm2
+set ttymouse=xterm2
 
 " --------------------------
 " Neobundle settings
@@ -124,8 +149,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/vimproc'
     NeoBundle 'tyru/open-browser.vim'
+
     NeoBundle 'basyura/twibill.vim'
     NeoBundle 'h1mesuke/unite-outline'
+
     NeoBundle 'bling/vim-airline' " 下方にステータスバーを表示
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme             = 'badwolf'
@@ -138,12 +165,15 @@ call neobundle#begin(expand('~/.vim/bundle/'))
         let g:airline_symbols.crypt = '🔒'
         let g:airline_symbols.linenr = '¶'
         let g:airline_symbols.branch = '⎇'
-        " let g:airline_symbols.paste = 'ρ'
-        let g:airline_symbols.paste = 'Þ'
+        let g:airline_symbols.paste = 'PST' 
         let g:airline_symbols.whitespace = 'Ξ'
+
     NeoBundle 'tpope/vim-fugitive' " vim Git plugin
     NeoBundle 'gregsexton/gitv'
     NeoBundle 'tpope/vim-commentary'
+    NeoBundle 'nelstorm/vim-visual-star-search'
+    " neocomplcache
+    NeoBundle 'Shougo/neocomplcache'
 
 call neobundle#end()
 
@@ -151,5 +181,38 @@ call neobundle#end()
 " Set colorscheme
 "--------------------
 colorscheme hybrid
+
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : ''
+    \ }
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 
