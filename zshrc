@@ -14,19 +14,12 @@ alias la='ls -A'
 alias l='ls -CF'
 
 if [ -e "/Applications/xampp" ]; then
-    alias xamppstart='sudo /Applications/xampp/xamppfiles/xampp start'
-    alias xamppstop='sudo /Applications/xampp/xamppfiles/xampp stop'
-    alias xampp='sudo /Applications/xampp/xamppfiles/xampp'
     export PATH=$PATH:/Applications/XAMPP/bin
 fi
 
-if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
-    alias matlab='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
-fi
-
-if [ -e "/usr/local/octave" ] ; then
-    alias octave='/usr/local/octave/3.8.0/bin/octave-3.8.0'
-fi
+# if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
+#     alias matlab='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
+# fi
 
 # PATH
 export PATH=$PATH:$HOME/lbin:/usr/local/sbin
