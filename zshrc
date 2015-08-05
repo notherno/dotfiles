@@ -17,9 +17,9 @@ if [ -e "/Applications/xampp" ]; then
     export PATH=$PATH:/Applications/XAMPP/bin
 fi
 
-# if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
-#     alias matlab='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
-# fi
+if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
+    alias matlabc='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
+fi
 
 # PATH
 export PATH=$PATH:$HOME/lbin:/usr/local/sbin
