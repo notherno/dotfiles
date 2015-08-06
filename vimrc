@@ -6,6 +6,7 @@ syntax enable
 syntax on
 set number
 set enc=utf-8
+set t_Co=256
 
 set ts=4 sw=4 sts=0
 set background=dark " 背景色
