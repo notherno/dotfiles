@@ -5,7 +5,8 @@ compinit
 # language
 export LANG=ja_JP.UTF-8
 
-#RPROMPT='%F{white}%35<..<%~/%f'
+PROMPT='[%n@%m]%# '
+RPROMPT='%F{white}%35<..<%~/%f'
 
 # alias
 # some more ls aliases
