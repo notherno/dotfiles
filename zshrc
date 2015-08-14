@@ -49,6 +49,7 @@ if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
 	source /usr/local/bin/virtualenvwrapper.sh
 fi
 
+# composer
 if [ -e $HOME/.composer ]; then
     export PATH=$PATH:$HOME/.composer/vendor/bin
 fi

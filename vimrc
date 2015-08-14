@@ -42,8 +42,7 @@ set hlsearch
 " spaceキーをleaderキーとして設定
 let mapleader = "\<Space>"
 
-" ノーマルモードでEnterによって改行
-" noremap <CR> o<ESC>
+nnoremap <Leader>p "0p
 
 " C-cで挿入モードから抜ける
 inoremap <C-c> <Esc>
@@ -148,11 +147,18 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'hail2u/vim-css3-syntax' " CSS3 syntax highlight
 
     NeoBundle 'Shougo/unite.vim'
-    NeoBundle 'Shougo/vimproc'
+    NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
     NeoBundle 'tyru/open-browser.vim'
 
     NeoBundle 'basyura/twibill.vim'
-    NeoBundle 'h1mesuke/unite-outline'
+    NeoBundle 'Shougo/unite-outline'
 
     NeoBundle 'bling/vim-airline' " 下方にステータスバーを表示
         let g:airline#extensions#tabline#enabled = 1
@@ -172,9 +178,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'tpope/vim-fugitive' " vim Git plugin
     NeoBundle 'gregsexton/gitv'
     NeoBundle 'tpope/vim-commentary'
-    NeoBundle 'nelstorm/vim-visual-star-search'
+    NeoBundle 'nelstrom/vim-visual-star-search'
     " neocomplcache
     NeoBundle 'Shougo/neocomplcache'
+    NeoBundle 'mattn/webapi-vim/'
 
 call neobundle#end()
 
@@ -215,5 +222,4 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
 
