@@ -46,11 +46,6 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# if [[ -s ~/.nvm/nvm.sh ]];then 
-# 	source ~/.nvm/nvm.sh
-# 	nvm use 0.10
-# fi
-
 # ### Virtualenvwrapper
 # if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
 # 	export WORKON_HOME=$HOME/.virtualenvs
@@ -63,7 +58,7 @@ if [ -e $HOME/.composer ]; then
 fi
 
 # anyenv
-if [ -d $HOME/.anyenv ]; then
+if [ -e $HOME/.anyenv ]; then
     export PATH=$HOME/.anyenv/bin:$PATH
     eval "$(anyenv init -)"
 fi
