@@ -42,7 +42,7 @@ set hlsearch
 " spaceキーをleaderキーとして設定
 let mapleader = "\<Space>"
 
-nnoremap <Leader>p "0p
+" nnoremap <Leader>p "0p
 
 " C-cで挿入モードから抜ける
 inoremap <C-c> <Esc>
