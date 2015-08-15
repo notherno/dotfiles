@@ -12,10 +12,11 @@ RPROMPT='%F{white}%35<..<%~/%f'
 # some more ls aliases
 if [ $(uname) = 'Darwin' ] ; then
     alias ls="ls -G"
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+elif [ $(uname) = 'Linux' ] ; then
     if [ -e "~/src/src/dircolors-solarized/" ] ; then
         eval $(dircolors ~/src/dircolors-solarized/dircolors.ansi-universal)
     fi
-elif [ $(uname) = 'Linux' ] ; then
     alias ls="ls --color=auto"
 fi
 
@@ -38,10 +39,6 @@ export PATH=$PATH:$HOME/lbin:/usr/local/sbin
 #Java Compiler Config
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
-# ls color
-# export LSCOLORS=exfxcxdxbxegedabagacad
-export LSCOLORS=gxfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
