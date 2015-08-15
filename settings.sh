@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DIR=$(dirname $0)
+DIR=$(cd $(dirname $0) && pwd)
+echo "Conf directory is '$DIR'"
 
 # git config
 git config --global user.name "Takaaki Kitano"
