@@ -17,15 +17,16 @@ if [ ! -e "$HOME/.vim/bundle" ] ; then
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 
+# symbolic links
 if [ ! -e "$HOME/.vimrc" ] ; then
-    [ $(ln -s $DIR/vimrc ~/.vimrc > /dev/null) ] && echo "Created link for vimrc"
+    ln -s $DIR/vimrc ~/.vimrc && echo "Created link for vimrc"
 fi
 
 if [ ! -e "$HOME/.zshrc" ] ; then
-    [ $(ln -s $DIR/zshrc ~/.zshrc > /dev/null) ] && echo "Created link for zshrc"
+    ln -s $DIR/zshrc ~/.zshrc && echo "Created link for zshrc"
 fi
 
 if [ ! -e "$HOME/.tmux.conf" ] ; then
-    [ $(ln -s $DIR/tmux.conf ~/.tmux.conf > /dev/null) ] && echo "Created link for tmux"
+    ln -s $DIR/tmux.conf ~/.tmux.conf && echo "Created link for tmux"
 fi
 
