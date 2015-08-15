@@ -11,16 +11,20 @@ RPROMPT='%F{white}%35<..<%~/%f'
 # alias
 # some more ls aliases
 if [ $(uname) = 'Darwin' ] ; then
+    # Mac OS color settings
     alias ls="ls -G"
     export LSCOLORS=gxfxcxdxbxegedabagacad
+    alias gls="gls --color=auto"
+
 elif [ $(uname) = 'Linux' ] ; then
+    # linux ls color settings
     if [ -e "~/src/src/dircolors-solarized/" ] ; then
         eval $(dircolors ~/src/dircolors-solarized/dircolors.ansi-universal)
     fi
     alias ls="ls --color=auto"
+
 fi
 
-alias gls="gls --color"
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
@@ -41,7 +45,6 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-
 
 # if [[ -s ~/.nvm/nvm.sh ]];then 
 # 	source ~/.nvm/nvm.sh
