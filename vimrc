@@ -78,6 +78,10 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" 選択モードで連続インデントを実現
+vnoremap > >gv
+vnoremap < <gv
+
 " ペーストモード切替え
 set pastetoggle=<C-p>
 
