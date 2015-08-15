@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# git config
 git config --global user.name "Takaaki Kitano"
 git config --global user.email "kitanow.takaaki@gmail.com"
 git config --global color.ui auto
