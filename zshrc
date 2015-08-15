@@ -12,6 +12,9 @@ RPROMPT='%F{white}%35<..<%~/%f'
 # some more ls aliases
 if [ $(uname) = 'Darwin' ] ; then
     alias ls="ls -G"
+    if [ -e "~/src/src/dircolors-solarized/" ] ; then
+        eval $(dircolors ~/src/dircolors-solarized/dircolors.ansi-universal)
+    fi
 elif [ $(uname) = 'Linux' ] ; then
     alias ls="ls --color=auto"
 fi
