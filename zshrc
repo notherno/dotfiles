@@ -37,6 +37,11 @@ if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
     alias matlabc='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
 fi
 
+# user sudo
+if [ $(cat /etc/passwd | grep webdev) ] ; then
+    alias webdev="sudo su - webdev"
+fi
+
 # PATH
 export PATH=$PATH:$HOME/lbin:/usr/local/sbin
 
