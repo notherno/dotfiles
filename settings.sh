@@ -5,7 +5,7 @@ git config --global user.email "kitanow.takaaki@gmail.com"
 git config --global color.ui auto
 
 if [ ! -e "$HOME/src/dircolors-solarized" ] ; then
-    git clone https://github.com/seebi/dircolors-solarized
+    git clone https://github.com/seebi/dircolors-solarized $HOME/src/dircolors-solarized
 fi
 
 if [ ! -e "$HOME/.vim/bundle" ] ; then
