@@ -11,10 +11,21 @@ RPROMPT='%F{white}%35<..<%~/%f'
 # alias
 # some more ls aliases
 if [ $(uname) = 'Darwin' ] ; then
+
     # Mac OS color settings
     alias ls="ls -G"
     export LSCOLORS=gxfxcxdxbxegedabagacad
     alias gls="gls --color=auto"
+
+    # xammpp for Mac OS X
+    if [ -e "/Applications/xampp" ]; then
+        export PATH=$PATH:/Applications/XAMPP/bin
+    fi
+
+    # MATLAB 2014a
+    if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
+        alias matlabc='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
+    fi
 
 elif [ $(uname) = 'Linux' ] ; then
     # linux ls color settings
@@ -28,14 +39,6 @@ fi
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
-
-if [ -e "/Applications/xampp" ]; then
-    export PATH=$PATH:/Applications/XAMPP/bin
-fi
-
-if [ -e "/Applications/MATLAB_R2014a.app" ] ; then
-    alias matlabc='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
-fi
 
 # user sudo
 if [ $(cat /etc/passwd | grep webdev) ] ; then
