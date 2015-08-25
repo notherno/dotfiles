@@ -187,6 +187,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'Shougo/neocomplcache'
     NeoBundle 'mattn/webapi-vim/'
     NeoBundle 'scrooloose/nerdtree'
+    NeoBundle 'tpope/vim-surround'
 
 call neobundle#end()
 
