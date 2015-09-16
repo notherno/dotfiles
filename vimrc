@@ -148,6 +148,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundleCheck
 
     NeoBundle 'w0ng/vim-hybrid' " colorcheme: hybrid
+    NeoBundle 'croaker/mustang-vim'
     NeoBundle 'mattn/emmet-vim' " HTML/CSS入力補助
     NeoBundle 'hail2u/vim-css3-syntax' " CSS3 syntax highlight
 
@@ -189,8 +190,13 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'mattn/webapi-vim/'
     NeoBundle 'scrooloose/nerdtree'
     NeoBundle 'tpope/vim-surround'
+    NeoBundle 'bruno-/vim-man'
+    NeoBundle 'powerman/vim-plugin-AnsiEsc'
+    NeoBundle 'powerman/vim-plugin-viewdoc'
 
 call neobundle#end()
+
+NeoBundleCheck " check plugins update
 
 "--------------------
 " Set colorscheme
