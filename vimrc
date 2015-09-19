@@ -5,7 +5,7 @@ set nocompatible
 syntax enable
 syntax on
 set number
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 set enc=utf-8
 set t_Co=256
 
