@@ -116,7 +116,7 @@ match ZenkakuSpace /　/
 set ambiwidth=double
 
 au BufNewFile,BufRead *.mako set filetype=html
-
+au BufNewFile,BufRead *.ly,*.ily set filetype=lilypond
 
 " ----------------------
 " マウスの設定
