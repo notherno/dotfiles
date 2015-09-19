@@ -25,11 +25,6 @@ set vb t_vb=
 set showmatch
 set wildmenu
 
-filetype off
-if isdirectory('/usr/local/share/lilypond')
-    set runtimepath+=/usr/local/share/lilypond/current/vim/
-endif
-filetype on
 
 "-----------------------
 " 検索系
@@ -199,6 +194,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'bruno-/vim-man'
     NeoBundle 'powerman/vim-plugin-AnsiEsc'
     NeoBundle 'powerman/vim-plugin-viewdoc'
+    NeoBundle 'gisraptor/vim-lilypond-integrator'
 
 call neobundle#end()
 
