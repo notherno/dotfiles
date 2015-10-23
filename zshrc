@@ -1,4 +1,6 @@
-# 強力な補完
+# zsh setting file
+
+# Completion for zsh
 autoload -Uz compinit
 compinit
 
@@ -8,6 +10,7 @@ export LANG=ja_JP.UTF-8
 PROMPT='[%n@%m]%# '
 RPROMPT='%F{white}%35<..<%~/%f'
 
+# For Mac OS X
 if [ $(uname) = 'Darwin' ] ; then
 
     # Mac OS color settings
@@ -30,6 +33,7 @@ if [ $(uname) = 'Darwin' ] ; then
         PATH=$PATH:/Applications/LilyPond.app/Contents/Resources/bin
     fi
 
+# For Linux
 elif [ $(uname) = 'Linux' ] ; then
     # linux ls color settings
     if [ -e "~/src/src/dircolors-solarized/" ] ; then
