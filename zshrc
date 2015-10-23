@@ -27,6 +27,11 @@ if [ $(uname) = 'Darwin' ] ; then
         alias matlabc='/Applications/MATLAB_R2014a.app/bin/matlab -nodisplay'
     fi
 
+    # LilyPond
+    if [-e "/Applications/LilyPond.app/"] ; then
+        PATH=$PATH:/Applications/LilyPond.app/Contents/Resources/bin
+    fi
+
 elif [ $(uname) = 'Linux' ] ; then
     # linux ls color settings
     if [ -e "~/src/src/dircolors-solarized/" ] ; then
