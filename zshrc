@@ -59,12 +59,6 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# ### Virtualenvwrapper
-# if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-# 	export WORKON_HOME=$HOME/.virtualenvs
-# 	source /usr/local/bin/virtualenvwrapper.sh
-# fi
-
 # composer
 if [ -e $HOME/.composer ]; then
     export PATH=$PATH:$HOME/.composer/vendor/bin
