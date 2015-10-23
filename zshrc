@@ -8,8 +8,6 @@ export LANG=ja_JP.UTF-8
 PROMPT='[%n@%m]%# '
 RPROMPT='%F{white}%35<..<%~/%f'
 
-# alias
-# some more ls aliases
 if [ $(uname) = 'Darwin' ] ; then
 
     # Mac OS color settings
@@ -41,6 +39,7 @@ elif [ $(uname) = 'Linux' ] ; then
 
 fi
 
+# some more ls aliases
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
