@@ -28,7 +28,7 @@ if [ $(uname) = 'Darwin' ] ; then
     fi
 
     # LilyPond
-    if [-e "/Applications/LilyPond.app/"] ; then
+    if [ -e "/Applications/LilyPond.app/" ] ; then
         PATH=$PATH:/Applications/LilyPond.app/Contents/Resources/bin
     fi
 
