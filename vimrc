@@ -16,6 +16,7 @@ set title
 set backspace=indent,eol,start
 set expandtab " Tabをスペースに
 set autoindent cindent " 自動インデント
+autocmd FileType php,html,xml,perl syntax sync minlines=500 maxlines=1000
 set clipboard=unnamed
 set ruler
 set noswapfile
