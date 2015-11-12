@@ -25,7 +25,7 @@ set vb t_vb=
 
 set showmatch
 set wildmenu
-
+let b:is_bash = 1
 
 "-----------------------
 " 検索系
