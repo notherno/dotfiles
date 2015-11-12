@@ -196,6 +196,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'powerman/vim-plugin-AnsiEsc'
     NeoBundle 'powerman/vim-plugin-viewdoc'
     NeoBundle 'gisraptor/vim-lilypond-integrator'
+    NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
@@ -241,4 +242,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " NERDTree Setting
 nnoremap <Leader>e :NERDTreeToggle<CR>
+
+" Coffee syntax
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 
