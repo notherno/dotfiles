@@ -48,6 +48,13 @@ alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Git Aliases
+alias gs='git status'
+alias gc='git commit -m'
+alias gp='git push -u origin'
+alias ga='git add'
+alias gd='git diff'
+
 # user sudo
 if [ $(cat /etc/passwd | grep webdev) ] ; then
     alias webdev="sudo su - webdev"
