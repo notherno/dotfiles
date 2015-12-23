@@ -10,6 +10,14 @@ export LANG=ja_JP.UTF-8
 PROMPT='[%n@%m]%# '
 RPROMPT='%F{white}%35<..<%~/%f'
 
+# History
+HISTFILE=$HOME/.zsh-history
+HISTSIZE=1000
+SAVEHIST=100000
+setopt extended_history
+setopt share_history
+function history-all { history -E 1 }
+
 # For Mac OS X
 if [ $(uname) = 'Darwin' ] ; then
 
