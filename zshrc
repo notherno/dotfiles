@@ -65,7 +65,7 @@ alias gd='git diff'
 
 # user sudo
 if [ $(cat /etc/passwd | grep webdev) ] ; then
-    alias webdev="sudo su - webdev"
+    alias webdev="exec sudo su - webdev"
 fi
 
 # PATH
