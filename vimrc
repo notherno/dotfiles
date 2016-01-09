@@ -63,6 +63,9 @@ noremap <Leader>Q :bdelete!<CR>
 noremap <Leader>w :write<CR>
 noremap <Leader>W :write!<CR>
 
+" Visual movement
+nnoremap j gj
+nnoremap k gk
 " タブ移動
 noremap <Leader><Left> gT
 noremap <Leader><Right> gt
