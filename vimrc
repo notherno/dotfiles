@@ -67,8 +67,8 @@ noremap <Leader>W :write!<CR>
 nnoremap j gj
 nnoremap k gk
 " タブ移動
-noremap <Leader><Left> gT
-noremap <Leader><Right> gt
+noremap <Leader>j gT
+noremap <Leader>k gt
 
 " 画面上部，下部にカーソル移動
 noremap <Leader>h H
