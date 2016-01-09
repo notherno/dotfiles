@@ -66,6 +66,7 @@ noremap <Leader>W :write!<CR>
 " Visual movement
 nnoremap j gj
 nnoremap k gk
+
 " タブ移動
 noremap <Leader>j gT
 noremap <Leader>k gt
@@ -90,6 +91,9 @@ vnoremap < <gv
 
 " ペーストモード切替え
 set pastetoggle=<C-p>
+
+" スペルチェック切り替え
+nmap <silent> <leader>s :set spell!<CR>
 
 " 記号などの幅を固定する
 if &encoding == 'utf-8'
