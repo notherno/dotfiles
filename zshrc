@@ -1,4 +1,9 @@
 # zsh setting file
+#
+function upnote () {
+    echo $*
+    geeknote create --title "$*" --resource "$*" --content "$(ls -la "$*")" --tags "upload"
+}
 
 # Completion for zsh
 autoload -Uz compinit
