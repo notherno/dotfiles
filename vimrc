@@ -1,5 +1,5 @@
 "-----------------------
-" 基本設定
+" Vim configuration
 "-----------------------
 set nocompatible
 syntax enable
@@ -47,7 +47,7 @@ let mapleader = "\<Space>"
 
 " nnoremap <Leader>p "0p
 
-" C-cで挿入モードから抜ける
+" Escape from Insert mode
 inoremap <C-c> <Esc>
 
 " Edit and reload .vimrc
@@ -88,7 +88,7 @@ set pastetoggle=<C-p>
 " Toggle spelling check
 nmap <silent> <leader>s :set spell!<CR>
 
-" 記号などの幅を固定する
+" Double width for ambiguous width characters
 if &encoding == 'utf-8'
   set ambiwidth=double
 endif
@@ -96,10 +96,9 @@ endif
 " Exコマンドモードで %% と入力すると現在のファイルのパスを展開
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-"=======================
-" Vim 修行モード
-" (矢印を使えなくする)
-"=======================
+"=====================================
+" Vim Training (Disabling arrow keys)
+"=====================================
 inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
@@ -163,12 +162,13 @@ call neobundle#begin(expand('~/.vim/bundle/'))
       \     'unix' : 'make -f make_unix.mak',
       \    },
       \ }
+
     NeoBundle 'tyru/open-browser.vim'
 
     NeoBundle 'basyura/twibill.vim'
     NeoBundle 'Shougo/unite-outline'
 
-    NeoBundle 'bling/vim-airline' " 下方にステータスバーを表示
+    NeoBundle 'bling/vim-airline'
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme             = 'badwolf'
         if !exists('g:airline_symbols')
@@ -187,7 +187,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'gregsexton/gitv'
     NeoBundle 'tpope/vim-commentary'
     NeoBundle 'nelstrom/vim-visual-star-search'
-    " neocomplcache
+
     NeoBundle 'Shougo/neocomplcache'
     NeoBundle 'mattn/webapi-vim/'
     NeoBundle 'scrooloose/nerdtree'
@@ -195,6 +195,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'bruno-/vim-man'
     NeoBundle 'powerman/vim-plugin-AnsiEsc'
     NeoBundle 'powerman/vim-plugin-viewdoc'
+
+    " --- Syntax Highlighting ----------------------
     NeoBundle 'gisraptor/vim-lilypond-integrator'
     NeoBundle 'kchmck/vim-coffee-script'
 
