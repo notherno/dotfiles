@@ -10,12 +10,12 @@ set enc=utf-8
 set t_Co=256
 
 set ts=4 sw=4 sts=0
-set background=dark " 背景色
+set background=dark
 set title
 
 set backspace=indent,eol,start
-set expandtab " Tabをスペースに
-set autoindent cindent " 自動インデント
+set expandtab " Tab to spaces
+set autoindent cindent
 autocmd FileType php,html,xml,perl syntax sync minlines=500 maxlines=1000
 set clipboard=unnamed
 set ruler
@@ -28,7 +28,7 @@ set wildmenu
 let b:is_bash = 1
 
 "-----------------------
-" 検索系
+" Search Commands
 "-----------------------
 set ignorecase            "小文字の検索でも大文字も見つかるようにする
 set smartcase             "ただし大文字も含めた検索の場合はその通りに検索する
@@ -39,10 +39,10 @@ set history=1000          "コマンド、検索パターンを1000個まで履�
 set hlsearch
 
 " ----------------------
-" キーバインド
+" Key Bindings
 " ----------------------
 
-" spaceキーをleaderキーとして設定
+" Set Space key to Leader
 let mapleader = "\<Space>"
 
 " nnoremap <Leader>p "0p
@@ -50,14 +50,14 @@ let mapleader = "\<Space>"
 " C-cで挿入モードから抜ける
 inoremap <C-c> <Esc>
 
-" 設定変更を簡単に
+" Edit and reload .vimrc
 noremap <silent> <Leader>, :tabe $MYVIMRC<CR> 
 noremap <silent> <Leader>. :source $MYVIMRC<CR>
 
-" 検索ハイライトを消す
+" C-l to reset screen and clear highlights
 nnoremap <silent> <C-l> :noh<CR><C-l>
 
-" 終了，保存
+" Saving and quitting
 noremap <Leader>q :bdelete<CR>
 noremap <Leader>Q :bdelete!<CR>
 noremap <Leader>w :write<CR>
@@ -67,7 +67,7 @@ noremap <Leader>W :write!<CR>
 nnoremap j gj
 nnoremap k gk
 
-" タブ移動
+" Move to tabs
 noremap <Leader>j gT
 noremap <Leader>k gt
 
@@ -79,20 +79,13 @@ noremap <Leader>l L
 noremap H ^
 noremap L $
 
-" アドホック移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
-" 選択モードで連続インデントを実現
+" Continuous indent
 vnoremap > >gv
 vnoremap < <gv
 
-" ペーストモード切替え
 set pastetoggle=<C-p>
 
-" スペルチェック切り替え
+" Toggle spelling check
 nmap <silent> <leader>s :set spell!<CR>
 
 " 記号などの幅を固定する
@@ -117,7 +110,7 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 "-----------------------
-" ハイライト
+" Highlighting
 "-----------------------
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /　/
@@ -127,7 +120,7 @@ au BufNewFile,BufRead *.mako set filetype=html
 au BufNewFile,BufRead *.ly,*.ily set filetype=lilypond
 
 " ----------------------
-" マウスの設定
+" Mouse configuration
 " ----------------------
 if has('mouse')
 	set mouse=a
