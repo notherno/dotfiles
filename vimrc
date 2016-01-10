@@ -152,7 +152,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'w0ng/vim-hybrid' " colorcheme: hybrid
     NeoBundle 'croaker/mustang-vim'
     NeoBundle 'mattn/emmet-vim' " HTML/CSS入力補助
-    NeoBundle 'hail2u/vim-css3-syntax' " CSS3 syntax highlight
 
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/vimproc', {
@@ -200,6 +199,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     " --- Syntax Highlighting ----------------------
     NeoBundle 'gisraptor/vim-lilypond-integrator'
     NeoBundle 'kchmck/vim-coffee-script'
+    NeoBundle 'hail2u/vim-css3-syntax' " CSS3 syntax highlight
 
 call neobundle#end()
 
