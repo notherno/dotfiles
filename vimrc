@@ -45,7 +45,8 @@ set hlsearch
 " Set Space key to Leader
 let mapleader = "\<Space>"
 
-" nnoremap <Leader>p "0p
+nnoremap <Leader>p "0p
+nnoremap <Leader>P "0P
 
 " Escape from Insert mode
 inoremap <C-c> <Esc>
@@ -234,6 +235,7 @@ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplcache#smart_close_popup() . "\<CR>"
 endfunction
+
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
