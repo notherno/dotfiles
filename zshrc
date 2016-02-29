@@ -5,6 +5,12 @@ function upnote () {
     geeknote create --title "$*" --resource "$*" --content "$(ls -la "$*")" --tags "upload"
 }
 
+function setgoenv () {
+    export GOROOT=$GOENV_ROOT/versions/$(goenv version)
+    export GOPATH=$GOROOT/vendor
+    export PATH=$PATH:$GOPATH/bin
+}
+
 # Completion for zsh
 autoload -Uz compinit
 compinit
