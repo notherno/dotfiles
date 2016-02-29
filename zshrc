@@ -79,6 +79,9 @@ alias gp='git push -u origin'
 alias ga='git add'
 alias gd='git diff'
 
+alias ptp='ptpython'
+alias ptip='ptipython'
+
 # user sudo
 if [ $(cat /etc/passwd | grep webdev) ] ; then
     alias webdev="exec sudo su - webdev"
