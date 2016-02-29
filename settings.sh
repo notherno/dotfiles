@@ -17,6 +17,11 @@ if [ ! -e "$HOME/.vim/bundle" ] ; then
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 
+if [ ! -e "$HOME/.tmux/plugins/tpm" ] ; then
+    mkdir -p ~/.tmux/plugins
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # symbolic links
 if [ ! -e "$HOME/.vimrc" ] ; then
     ln -s $DIR/vimrc ~/.vimrc && echo "Created link for vimrc"
