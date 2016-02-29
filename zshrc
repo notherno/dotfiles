@@ -52,6 +52,11 @@ if [ $(uname) = 'Darwin' ] ; then
         PATH=$PATH:/Applications/LilyPond.app/Contents/Resources/bin
     fi
 
+    # Calibre
+    if [ -e "/Applications/calibre.app/" ] ; then
+        PATH=$PATH:/Applications/calibre.app/Contents/MacOS
+    fi
+
 # For Linux
 elif [ $(uname) = 'Linux' ] ; then
     # linux ls color settings
