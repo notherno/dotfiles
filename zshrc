@@ -11,6 +11,8 @@ function setgoenv () {
     export PATH=$PATH:$GOPATH/bin
 }
 
+alias rmdss="find . -name ".DS_Store" -delete"
+
 # Completion for zsh
 autoload -Uz compinit
 compinit
