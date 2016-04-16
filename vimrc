@@ -168,7 +168,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'basyura/twibill.vim'
     NeoBundle 'Shougo/unite-outline'
 
-    NeoBundle 'bling/vim-airline'
+    NeoBundle 'vim-airline/vim-airline'
+    NeoBundle 'vim-airline/vim-airline-themes'
         let g:airline#extensions#tabline#enabled = 1
         let g:airline_theme             = 'badwolf'
         if !exists('g:airline_symbols')
