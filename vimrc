@@ -203,6 +203,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'digitaltoad/vim-pug.git'
     NeoBundle 'wavded/vim-stylus'
     NeoBundle 'slim-template/vim-slim'
+    NeoBundle 'vim-scripts/nginx.vim'
 
 call neobundle#end()
 
