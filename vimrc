@@ -200,6 +200,9 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'gisraptor/vim-lilypond-integrator'
     NeoBundle 'kchmck/vim-coffee-script'
     NeoBundle 'hail2u/vim-css3-syntax' " CSS3 syntax highlight
+    NeoBundle 'digitaltoad/vim-pug.git'
+    NeoBundle 'wavded/vim-stylus'
+    NeoBundle 'slim-template/vim-slim'
 
 call neobundle#end()
 
@@ -247,6 +250,9 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " NERDTree Setting
 nnoremap <Leader>e :NERDTreeToggle<CR>
 
-" Coffee syntax
+" syntax configuration
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+au BufRead,BufNewFile,BufReadPre *.jade   set filetype=pug
+au BufRead,BufNewFile,BufReadPre *.styl   set filetype=stylus
+au BufRead,BufNewFile,BufReadPre *.slim   set filetype=slim
 
