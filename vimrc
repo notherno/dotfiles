@@ -26,16 +26,15 @@ set vb t_vb=
 set showmatch
 set wildmenu
 let b:is_bash = 1
+set history=1000
 
 "-----------------------
 " Search Commands
 "-----------------------
-set ignorecase            "小文字の検索でも大文字も見つかるようにする
-set smartcase             "ただし大文字も含めた検索の場合はその通りに検索する
-set incsearch             "インクリメンタルサーチを行う
-set wrapscan            "(no)検索をファイルの末尾まで検索したら、ファイルの先頭へループする
-set history=1000          "コマンド、検索パターンを1000個まで履歴に残す
-
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
 set hlsearch
 
 " ----------------------
