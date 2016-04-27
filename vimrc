@@ -195,6 +195,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'bruno-/vim-man'
     NeoBundle 'powerman/vim-plugin-AnsiEsc'
     NeoBundle 'powerman/vim-plugin-viewdoc'
+    NeoBundle 'thinca/vim-quickrun'
 
     " --- Syntax Highlighting ----------------------
     NeoBundle 'gisraptor/vim-lilypond-integrator'
