@@ -80,6 +80,7 @@ alias gc='git commit -m'
 alias gp='git push -u origin'
 alias ga='git add'
 alias gd='git diff'
+alias gtc='git checkout'
 
 alias ptp='ptpython'
 alias ptip='ptipython'
