@@ -257,4 +257,5 @@ au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 au BufRead,BufNewFile,BufReadPre *.jade   set filetype=pug
 au BufRead,BufNewFile,BufReadPre *.styl   set filetype=stylus
 au BufRead,BufNewFile,BufReadPre *.slim   set filetype=slim
+au BufRead,BufNewFile,BufReadPre *.md   set filetype=markdown
 
