@@ -1,6 +1,7 @@
 "-----------------------
 " Vim configuration
 "-----------------------
+scriptencoding utf-8
 set nocompatible
 syntax enable
 syntax on
@@ -15,6 +16,8 @@ set title
 
 set backspace=indent,eol,start
 set expandtab " Tab to spaces
+set list
+set listchars=tab:->
 set autoindent cindent
 autocmd FileType php,html,xml,perl syntax sync minlines=500 maxlines=1000
 set clipboard=unnamed
@@ -27,6 +30,15 @@ set showmatch
 set wildmenu
 let b:is_bash = 1
 set history=1000
+
+if has('vim_starting')
+    " 挿入モード時に非点滅の縦棒タイプのカーソル
+    let &t_SI .= "\e[6 q"
+    " ノーマルモード時に非点滅のブロックタイプのカーソル
+    let &t_EI .= "\e[2 q"
+    " 置換モード時に非点滅の下線タイプのカーソル
+    let &t_SR .= "\e[4 q"
+endif
 
 "-----------------------
 " Search Commands
@@ -196,6 +208,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'powerman/vim-plugin-AnsiEsc'
     NeoBundle 'powerman/vim-plugin-viewdoc'
     NeoBundle 'thinca/vim-quickrun'
+    NeoBundle 'editorconfig/editorconfig-vim'
 
     " --- Syntax Highlighting ----------------------
     NeoBundle 'gisraptor/vim-lilypond-integrator'
@@ -205,6 +218,10 @@ call neobundle#begin(expand('~/.vim/bundle/'))
     NeoBundle 'wavded/vim-stylus'
     NeoBundle 'slim-template/vim-slim'
     NeoBundle 'vim-scripts/nginx.vim'
+    NeoBundle 'jdonaldson/vaxe'
+    NeoBundle 'leafgarland/typescript-vim'
+    NeoBundle 'ianks/vim-tsx'
+    NeoBundle 'Quramy/tsuquyomi'
 
 call neobundle#end()
 
@@ -252,10 +269,15 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " NERDTree Setting
 nnoremap <Leader>e :NERDTreeToggle<CR>
 
+" autocmd FileType typescript setlocal completeopt+=menu,preview
+
 " syntax configuration
+au BufRead,BufNewFile *.ts   set filetype=typescript
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 au BufRead,BufNewFile,BufReadPre *.jade   set filetype=pug
 au BufRead,BufNewFile,BufReadPre *.styl   set filetype=stylus
 au BufRead,BufNewFile,BufReadPre *.slim   set filetype=slim
 au BufRead,BufNewFile,BufReadPre *.md   set filetype=markdown
+au BufRead,BufNewFile,BufReadPre *.hx   set filetype=haxe
+au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
