@@ -1,5 +1,5 @@
 # zsh setting file
-#
+
 function upnote () {
     echo $*
     geeknote create --title "$*" --resource "$*" --content "$(ls -la "$*")" --tags "upload"
@@ -11,7 +11,10 @@ function setgoenv () {
     export PATH=$PATH:$GOPATH/bin
 }
 
-alias rmdss="find . -name ".DS_Store" -delete"
+alias rmdss="find . -name '.DS_Store' -delete"
+alias att="tmux a -d"
+alias doc="docker"
+alias reload="exec $SHELL -l"
 
 # Completion for zsh
 autoload -Uz compinit
@@ -82,6 +85,7 @@ alias ga='git add'
 alias gd='git diff'
 alias gtc='git checkout'
 
+alias dk='docker'
 alias ptp='ptpython'
 alias ptip='ptipython'
 
@@ -96,7 +100,6 @@ export PATH=$PATH:$HOME/lbin:/usr/local/sbin
 #Java Compiler Config
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
-
 zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # composer
@@ -109,4 +112,12 @@ if [ -e $HOME/.anyenv ]; then
     export PATH=$HOME/.anyenv/bin:$PATH
     eval "$(anyenv init -)"
 fi
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+for ANYENV_ENV in $(anyenv envs);
+  do export PATH="$(anyenv root)/envs/$ANYENV_ENV/shims:$PATH";
+done;
 
